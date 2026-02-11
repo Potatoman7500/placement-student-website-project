@@ -1,7 +1,12 @@
+import { Stack } from '@mantine/core';
+import PageLayout from '@/app/genericLayout';
+
 export default function Home() {
   return (
-    <>
-      <h1>Hello World!</h1>
-    </>
+    <PageLayout title={'Page Title'}>
+      <Stack>
+        <h2>Content</h2>
+      </Stack>
+    </PageLayout>
   );
 }
