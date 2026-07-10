@@ -5,11 +5,11 @@
   width: 100%;
   font-family: 'roboto', sans-serif;
   text-transform: uppercase;
-  background-color: var(--nav-background-color);
+  background-color: var(--Orange);
   :hover {
-    background-color: var(--nav-hover-color);
+    background-color: var(--Yellow);
     * {
-      color: var(--white);
+      color: var(--Black);
     }
   }
 }
@@ -20,6 +20,7 @@
   padding: 0.2rem 1rem;
   background: none;
   width: auto;
+  color: var(--Yellow);
 }
 
 .wrapper {
@@ -28,7 +29,7 @@
 
 .dropdown {
   position: absolute;
-  background-color: var(--nav-background-color);
+  background-color: var(--Yellow);
   top: 3.2rem;
   width: 100%;
 }

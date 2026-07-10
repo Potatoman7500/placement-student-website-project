@@ -14,7 +14,9 @@ export default function PageLayout({ children }: { children: React.ReactNode }) 
         <Flex
           align='center'
           gap='1rem'
+          
         >
+          
           <Image
             h={50}
             w='auto'
@@ -23,16 +25,23 @@ export default function PageLayout({ children }: { children: React.ReactNode }) 
           />
 
           <h1>Tenterden Folk Day Trust</h1>
+          
         </Flex>
         <Flex align='right'>
           { SignedIn ? (
-            <Button component='a' href='/admin'>Admin</Button>
+            <Button component='a' href='/admin' color='#FFD166'>
+              Admin
+            </Button>
           ) : (
-            <Button component='a' href='/login'>Login</Button>
+            <Button component='a' href='/login' color='#FFD166'>
+              Login
+            </Button>
           )}
           
           { SignedIn && (
-            <Button component='a' href='/logout'>Logout</Button>
+            <Button component='a' href='/logout' color='#FFD166'>
+              Logout
+            </Button>
           )}
         </Flex>
       </Flex>

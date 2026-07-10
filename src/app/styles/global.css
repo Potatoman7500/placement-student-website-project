@@ -19,10 +19,11 @@ h1 {
   font-family: 'roboto', sans-serif;
   font-size: 32px;
   line-height: 34px;
+  color: var(--Orange);
 }
 
 h2 {
-  color: var(--oliveGreen);
+  color: var(--Orange);
   font-family: 'roboto', sans-serif;
   font-size: 28px;
   line-height: 30px;
@@ -44,11 +45,14 @@ a {
   color: var(--link-color-inactive) !important;
 }
 
+
+
+
 .mantine-NavLink-root[data-active='true'] {
   font-weight: bold;
-  background-color: var(--teal);
+  background-color: var(--Yellow);
   * {
-    color: var(--white);
+    color: var(--Black);
   }
 }
 
@@ -57,14 +61,15 @@ a {
 }
 
 :root {
-  --brightGreen: #08f63c;
+  --brightGreen: #8b9556;
   --oliveGreen: #50742b;
   --darkGreen: #0d6b0a;
   --blue: #2d8dc6;
   --teal: #078a6f;
   --white: #ffffff;
-  --yellow: #fec100;
+  --Orange: #f26419;
   --pink: #e7727f;
+  --Yellow: #FFD166;
   --purple: #dca1b1;
   --nav-background-color: var(--brightGreen);
   --nav-hover-color: var(--teal);

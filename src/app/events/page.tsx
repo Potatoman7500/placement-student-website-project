@@ -12,34 +12,47 @@ export default function Events(): ReactNode {
   const eventsData = events;
   const[opened, { open, close }] = useDisclosure(false);
   const [modalContent, setModalContent] = React.useState<typeof events[number] | null>(null);
+  
 
   const SaturdayEvents = eventsData.filter(event => event.date.includes('Saturday'));
   const SundayEvents = eventsData.filter(event => event.date.includes('Sunday'));
   return (
     <>
-    <Modal opened={opened} onClose={close} centered lockScroll={false} overlayProps={{ opacity: 0.8, blur: 1}}>{modalContent && (
-      <div>
-        <h2>{modalContent.title}</h2>
-        <p>{modalContent.date}</p>
-        <p>{modalContent.time}</p>
-      </div>
-    )}</Modal>
+    <Modal opened={opened} onClose={close} centered  overlayProps={{ opacity: 0.8, blur: 1}} size="lg" radius="md">
+      {modalContent && (
+        <Stack gap="md">
+          <h2>{modalContent.title}</h2>
+          <Image
+            radius="md"
+            src={modalContent.image}
+            h={300}
+            w={'auto'}
+          />
+          <p>{modalContent.date}</p>
+          <p>{modalContent.time}</p>
+          <p>{modalContent.description}</p>
+        </Stack>
+      )}
+    </Modal>
     <PageLayout>
       <Stack justify='center'>
         <h2>Events</h2>
-        <Tabs defaultValue="Saturday">
+        <Button
+                color='#FFD166'
+                
+                component='a'
+                href="/tickets"
+              >
+                Buy Tickets
+              </Button>
+        <Tabs defaultValue="Saturday" color='#f26419' radius="md">
         <Tabs.List grow justify="center">
           <Tabs.Tab value="Saturday" > Saturday</Tabs.Tab>
           <Tabs.Tab value="Sunday" > Sunday</Tabs.Tab>
         </Tabs.List>
         <Tabs.Panel value="Saturday" pt="xs">
         <Stack gap="lg">
-          <Button
-                component='a'
-                href="/tickets"
-              >
-                Buy Tickets
-              </Button>
+          
           {SaturdayEvents.map((event) => (
             <Card shadow="sm" padding="lg"  orientation="horizontal" withBorder
             key={event.title}
@@ -72,12 +85,7 @@ export default function Events(): ReactNode {
         </Tabs.Panel>
         <Tabs.Panel value="Sunday" pt="xs">
         <Stack gap="lg">
-          <Button
-                component='a'
-                href="/tickets"
-              >
-                Buy Tickets
-              </Button>
+          
           {SundayEvents.map((event) => (
             <Card shadow="sm" padding="lg"  orientation="horizontal" withBorder
             key={event.title}
@@ -96,7 +104,7 @@ export default function Events(): ReactNode {
                 />
               </Card.Section> 
               <Stack justify="center" gap="md" w={"100%"} ml="lg"> 
-              <h3>{event.title}</h3>
+              <h2>{event.title}</h2>
               <p>{event.date}</p>
               <p>{event.time}</p>
               
